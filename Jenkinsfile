@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout'){
            steps {
                 git credentialsId: 'github-pat', 
-                url: 'https://github.com/iyiolaidris/Jenkins-Zero-To-Hero/tree/main/python-jenkins-argocd-k8s',
+                url: 'https://github.com/iyiolaidris/cicd-end-to-end.git',
                 branch: 'main'
            }
         }
