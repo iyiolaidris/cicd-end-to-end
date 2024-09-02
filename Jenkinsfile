@@ -28,13 +28,14 @@ pipeline {
         }
 
         stage('Push the artifacts'){
-           steps{
+           steps {
                 script{
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
-                    sh '''
-                    echo 'Push to Repo'
-                    docker push iyiolaidris/cicd-e2e:${BUILD_NUMBER}
-                    '''
+                        sh '''
+                        echo 'Push to Repo'
+                        docker push iyiolaidris/cicd-e2e:${BUILD_NUMBER}
+                        '''
+                    }     
                 }
             }
         }
