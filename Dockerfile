@@ -1,5 +1,9 @@
-FROM python:3
-RUN apt-get update && apt-get install -y python3-distutils
+FROM python:3.12-slim
+
+RUN apt-get update && \
+    apt-get install -y python3.12-distutils python3.12-venv && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN pip install django==3.2
 
