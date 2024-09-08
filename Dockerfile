@@ -1,7 +1,6 @@
 FROM python:3.12-slim
-
 RUN apt-get update && \
-    apt-get install -y python3.12-distutils python3.12-venv && \
+    apt-get install -y python3-distutils python3-venv && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
