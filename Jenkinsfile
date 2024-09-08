@@ -30,7 +30,7 @@ pipeline {
         stage('Push the artifacts'){
            steps {
                 script{
-                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
+                    docker.withRegistry('https://index.docker.io/v1/', 'docker-cred') {
                         sh '''
                         echo 'Push to Repo'
                         docker push iyiolaidris/cicd-e2e:${BUILD_NUMBER}
